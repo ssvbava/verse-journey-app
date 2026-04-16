@@ -1,7 +1,11 @@
-import gitaData from "@/data/gita_data.json";
+import gitaData1 from "@/data/gita_data_1.json";
+import gitaData2 from "@/data/gita_data_2.json";
 import type { GitaData, Chapter, Verse } from "./types";
 
-const data = gitaData as GitaData;
+const data: GitaData = {
+  chapters: (gitaData1 as any).chapters,
+  verses: [...(gitaData1 as any).verses, ...(gitaData2 as any).verses]
+};
 
 export const TOTAL_DAYS = data.verses.length;
 
